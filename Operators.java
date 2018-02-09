@@ -1,17 +1,16 @@
 class Operators {
     public static void main(String args[]) {
-
-    }
-}
-String firstName = Victoriah 
-String lastName = Meyer
-String fullname = fisrtName + " "+ lastName
+    
+    String firstName = "Victoriah"; 
+    String lastName = "Meyer";
+    String fullName = (firstName + " "+ lastName);
  System.out.println(firstName);
  System.out.println("firstName");
  System.out.println(lastName);
  System.out.println("lastName");
  System.out.println(fullName);
  System.out.println("fullName");
+ 
  //Replace the -1's with values relevant to yourself
  int currentYear = 2018;
  int yearsUntilGraduation = 2;
@@ -19,7 +18,8 @@ String fullname = fisrtName + " "+ lastName
 
  System.out.println(myGradYear);
  System.out.println("myGradYear");
-   //Replace the -1's with values relevant to yourself
+  
+//Replace the -1's with values relevant to yourself
     int currentAge = 15;
     int nextAge = currentAge + 1;
     System.out.println(currentAge);
@@ -54,15 +54,14 @@ String fullname = fisrtName + " "+ lastName
     bcsCoinValue = reward / amtToRedeem; //Reassign bcsCoinValue to the potential
     System.out.println("One BCSCoin might be worth $" + bcsCoinValue + " later. If so...");
 
-bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue;
-System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);  
+    bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue;
+    System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);  
 
- Boolean haveJob = false;
+    Boolean haveJob = false;
     Boolean lookingForWork = true;
     Boolean canProgram = false;
-    int currentSavings = 500;
-
-//There are some print statements below. Can you guess which ones will print?
+    int currentSavings = 20;
+    //There are some print statements below. Can you guess which ones will print?
     if(!haveJob) {
         if(lookingForWork && canProgram) {
             System.out.println("Your chances as getting a job go up!");
@@ -78,5 +77,28 @@ System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsW
         System.out.println("Do you need to save more money, still?");
     }
 
-String targetSavingGoal = 1000
-String savingsPerMonth = 15
+ int targetSavingsGoal = 500;
+ int savingsPerMonth = 15;
+ int reachYourGoal = targetSavingsGoal / savingsPerMonth;
+ System.out.println(reachYourGoal + " Months");
+
+ Boolean hasMoney = false;
+ Boolean hasJob = false; 
+ Boolean lookingForJob = true;
+
+ if(!hasJob) {
+    if(!hasMoney && lookingForJob){
+        System.out.println("You better find a job soon!");
+    }
+    else if(hasMoney){
+        System.out.println("I guess you'll be fine for a while");
+    }
+}
+else{
+    System.out.println("You're good for now!");
+}
+  
+  
+    }
+}
+
