@@ -82,6 +82,35 @@ class Operators {
  int reachYourGoal = targetSavingsGoal / savingsPerMonth;
  System.out.println(reachYourGoal + " Months");
 
+ 
+  String sp = " ";
+    String noun1 = "I";
+    String noun2 = "school";
+    String noun3 = "food";
+    String noun4 = "piano";
+    String adj1 = "awsome";
+    String adj2 = "boring";
+    String adj3 = "fun";
+    String vb1 = "eating";
+    String vb2 = "walk";
+    String vb3 = "am";
+    String vb4 = "play";
+    String prep1 = "to";
+    String prep2 = "around";
+    String prep3 = "over";
+    String others1 = "also";
+    String others2 = "don't";
+    String article2 = "the";
+
+    String sent1 = noun1 + sp + others2 + sp + vb2 + sp + prep1 + sp + noun2;
+    String sent2 = noun1 + sp + "like" + sp + vb1 + sp + noun3;
+    String sent3 = noun1 + sp + others1 + sp + vb4 + sp + article2 + sp + noun4;
+
+    System.out.println(sent1);
+    System.out.println(sent2);
+    System.out.println(sent3);
+
+
  Boolean hasMoney = false;
  Boolean hasJob = false; 
  Boolean lookingForJob = true;
@@ -98,25 +127,7 @@ else{
     System.out.println("You're good for now!");
 }
   
-  String sp = " ";
-    String noun1 = "I";
-    String noun2 = "school";
-    String noun3 = "food";
-    String adj1 = "awsome";
-    String adj2 = "boring";
-    String adj3 = "fun";
-    String vb1 = "eating";
-    String vb2 = "walking";
-    String vb3 = "am";
-    String prep1 = "to";
-    String prep2 = "around";
-    String prep3 = "over";
-    String article1 = "a";
-    String article2 = "and";
-    String article3 = "the";
 
-    String sent1 = noun1 + sp + vb3 + sp + vb2 + sp + prep1 + sp + noun2;
-    String sent2 = 
     }
 }
 
