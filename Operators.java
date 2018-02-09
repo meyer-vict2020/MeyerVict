@@ -98,7 +98,25 @@ else{
     System.out.println("You're good for now!");
 }
   
-  
+  String sp = " ";
+    String noun1 = "I";
+    String noun2 = "school";
+    String noun3 = "food";
+    String adj1 = "awsome";
+    String adj2 = "boring";
+    String adj3 = "fun";
+    String vb1 = "eating";
+    String vb2 = "walking";
+    String vb3 = "am";
+    String prep1 = "to";
+    String prep2 = "around";
+    String prep3 = "over";
+    String article1 = "a";
+    String article2 = "and";
+    String article3 = "the";
+
+    String sent1 = noun1 + sp + vb3 + sp + vb2 + sp + prep1 + sp + noun2;
+    String sent2 = 
     }
 }
 
