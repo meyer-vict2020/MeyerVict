@@ -22,30 +22,53 @@ public class Calculator{
         }
         System.out.println("You selected mode " + mode);
 
+        
+
+        while(true) { 
+            System.out.print("Original Loan Amount: $"); 
+            scan = new Scanner(System.in); 
+            if(scan.hasNextInt()) {
+                loanAmt = scan.nextInt();  
+                    if(loanAmt > 0){
+                     break;
+                    }
+            }   
+        }
+                
+        while(true) { 
+            System.out.print("Loan Term (years): ");
+            scan = new Scanner(System.in); 
+            if(scan.hasNextInt()) {
+                loanTerm = scan.nextInt(); 
+                    if(loanTerm > 0){
+                        break;
+                    }  
+            }     
+        }
+       
+        while(true) { 
+            System.out.print("Interest Rate(%): "); 
+            scan = new Scanner(System.in); 
+            if(scan.hasNextDouble()) {
+                interestRate = scan.nextDouble()/100;
+                if(interestRate > 0 && interestRate < 100) {
+                     break; 
+                } 
+            }     
+        }  
+        
         if(mode == 1) {
             flatInterest();
         }
-        else {
-            System.out.println("Other modes not yet supported."); //Replace this with calls to your appropriate functions            
+        else if(mode == 2) {
+            compoundingNoPayments();
         }
+        else if(mode == 3) {
+            //compoundingWithPayments();
+        }
+
     }
     
-    public static void flatInterest() {
-        System.out.print("Original Loan Amount: $");
-                Scanner scan;
-        while(true) { 
-            scan = new Scanner(System.in);
-            printModeStatement(); 
-            if(scan.hasNextInt()) {
-                mode = scan.nextInt(); 
-                    break; 
-                
-            }
-            
-        }
-    }
-   
-
     public static void printModeStatement() {
         System.out.print(
             "Select an interest calculation mode:\n"
@@ -53,5 +76,29 @@ public class Calculator{
             + "(2) Compounding Interest Without Monthly Payments\n"
             + "(3) Compounding Interest With Monthly Payments\n"
         );
+    }
+
+
+    public static void flatInterest() {
+        System.out.print("Interest over term: $");
+        double interest = (loanAmt * loanTerm * interestRate);
+        System.out.println(interest);
+        
+        System.out.print("Total cost of loan: $");
+        double total = (loanAmt + interest);
+        System.out.println(total);
+    }     
+
+    public static void compoundingNoPayments(){
+        System.out.print("Interest over term: $");
+        double interest = (loanAmt * (interestRate / 12));
+        System.out.println(interest);
+    
+        System.out.print("Total cost of loan: $");
+        double total = (loanAmt + interest);
+        System.out.println(total);
+
+
+
     }
 }
