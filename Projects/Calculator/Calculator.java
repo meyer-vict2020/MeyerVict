@@ -22,8 +22,6 @@ public class Calculator{
         }
         System.out.println("You selected mode " + mode);
 
-        
-
         while(true) { 
             System.out.print("Original Loan Amount: $"); 
             scan = new Scanner(System.in); 
@@ -64,7 +62,7 @@ public class Calculator{
             compoundingNoPayments();
         }
         else if(mode == 3) {
-            //compoundingWithPayments();
+            compoundingWithPayments();
         }
 
     }
@@ -87,9 +85,25 @@ public class Calculator{
         System.out.print("Total cost of loan: $");
         double total = (loanAmt + interest);
         System.out.println(total);
+   
     }     
 
     public static void compoundingNoPayments(){
+        //while(monthsRemaining > 0){
+            System.out.print("Interest over term: $");
+            double interest = (loanAmt * (interestRate / 12));
+            System.out.println(interest);
+        
+            System.out.print("Total cost of loan: $");
+            double total = (loanAmt + interest);
+            System.out.println(total);
+        //}
+    }
+
+    public static void compoundingWithPayments(){
+        double ratePerMonth = (interestRate /12);
+        double monthlyPayment = (1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))));
+
         System.out.print("Interest over term: $");
         double interest = (loanAmt * (interestRate / 12));
         System.out.println(interest);
@@ -97,8 +111,6 @@ public class Calculator{
         System.out.print("Total cost of loan: $");
         double total = (loanAmt + interest);
         System.out.println(total);
-
-
 
     }
 }
