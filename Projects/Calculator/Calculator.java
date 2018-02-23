@@ -83,12 +83,39 @@ public class Calculator{
         System.out.println(interest);
         
         System.out.print("Total cost of loan: $");
-        double total = (loanAmt + interest);
-        System.out.println(total);
-   
+        double loanTotal = (loanAmt + interest);
+        System.out.println(loanTotal);
+        
     }     
 
     public static void compoundingNoPayments(){
+        int monthsRemaining = (loanTerm * 12);
+        double loanTotal = loanAmt;
+        while(monthsRemaining > 0){
+            double interest = (loanAmt * (interestRate / 12));
+            loanTotal += interest; 
+            monthsRemaining--;
+        }
+
+        double interest = (loanTotal - loanAmt);
+        System.out.print("Interest over term: $");
+        System.out.println(interest);
+    
+        System.out.print("Total cost of loan: $");
+        System.out.println(loanTotal);
+    }
+
+    public static void compoundingWithPayments(){
+        int monthsRemaining = (loanTerm * 12);
+        double loanTotal = loanAmt;
+        double ratePerMonth = (interestRate /12);
+        double monthlyPayment = (1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))));
+        while(monthsRemaining > 0){
+            double interest = (loanAmt * (interestRate / 12));
+            loanTotal += interest; 
+            monthsRemaining--;
+        }    
+        
         System.out.print("Interest over term: $");
         double interest = (loanAmt * (interestRate / 12));
         System.out.println(interest);
@@ -96,24 +123,6 @@ public class Calculator{
         System.out.print("Total cost of loan: $");
         double total = (loanAmt + interest);
         System.out.println(total);
-
-    }
-
-    public static void compoundingWithPayments(){
-        while(monthsRemaining > 0){
-            int monthsRemaining = 
-            double ratePerMonth = (interestRate /12);
-            double monthlyPayment = (1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))));
-
-           
-
-            System.out.print("Interest over term: $");
-            double interest = (loanAmt * (interestRate / 12));
-            System.out.println(interest);
         
-            System.out.print("Total cost of loan: $");
-            double total = (loanAmt + interest);
-            System.out.println(total);
-        }
     }
 }
