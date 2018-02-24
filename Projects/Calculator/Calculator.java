@@ -115,14 +115,19 @@ public class Calculator{
             loanTotal += interest; 
             monthsRemaining--;
         }    
-        
+        System.out.print("Minimum Monthly Payment: $");
+        System.out.println(monthlyPayment);
+
+        double finalPayment = (loanTotal / monthlyPayment);
+        System.out.print("Payment for the final month of the loan: $");
+        System.out.println(finalPayment);
+
+        double interest = (loanTotal - loanAmt);
         System.out.print("Interest over term: $");
-        double interest = (loanAmt * (interestRate / 12));
         System.out.println(interest);
-    
+
         System.out.print("Total cost of loan: $");
-        double total = (loanAmt + interest);
-        System.out.println(total);
+        System.out.println(loanTotal);
         
     }
 }

@@ -20,5 +20,5 @@ class Integers {
             return false; //An error was raised. The user input could not be read as a String.
         }
         return true; //No error was raised. The scanner read it successfully as a String.
-     }
+    }
 }
