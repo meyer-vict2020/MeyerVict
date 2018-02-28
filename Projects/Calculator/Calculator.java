@@ -76,7 +76,6 @@ public class Calculator{
         );
     }
 
-
     public static void flatInterest() {
         System.out.print("Interest over term: $");
         double interest = (loanAmt * loanTerm * interestRate);
@@ -106,23 +105,29 @@ public class Calculator{
     }
 
     public static void compoundingWithPayments(){
-        int monthsRemaining = (loanTerm * 12);
         double loanTotal = loanAmt;
         double ratePerMonth = (interestRate /12);
         double monthlyPayment = (1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12)))));
-        while(monthsRemaining > 0){
-            double interest = (loanAmt * (interestRate / 12));
-            loanTotal += interest; 
-            monthsRemaining--;
+        double outstandingBalance = loanAmt;
+        int monthsTillPaid = 0;
+        
+        while(outstandingBalance > 0){
+            double interest = outstandingBalance * ratePerMonth;
+            interest = outstandingBalance * ratePerMonth;
+            outstandingBalance = outstandingBalance + interest - monthlyPayment;
+            loanTotal += interest;
+            monthsTillPaid++;
         }    
+
         System.out.print("Minimum Monthly Payment: $");
         System.out.println(monthlyPayment);
+        
 
-        double finalPayment = (loanTotal / monthlyPayment);
-        System.out.print("Payment for the final month of the loan: $");
+        double finalPayment = monthlyPayment - (monthlyPayment * monthsTillPaid - loanTotal);
+        System.out.print("Payment for the final month: $");
         System.out.println(finalPayment);
 
-        double interest = (loanTotal - loanAmt);
+        double interest = loanTotal - loanAmt;
         System.out.print("Interest over term: $");
         System.out.println(interest);
 
